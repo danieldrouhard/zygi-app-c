@@ -5,6 +5,6 @@ export const environment: Environment = {
   apiKeys: {},
   production: false,
   version: version,
-  localApiHost: 'http://localhost:5173/api/',
+  localApiHost: `https://master--comfy-seahorse-d51b3e.netlify.app/`,
   remoteApiHost: `https://brandonshuey.ngrok.io/api/`,
 }
