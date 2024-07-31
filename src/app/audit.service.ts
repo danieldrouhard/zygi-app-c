@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, catchError, finalize, first, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, first, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
 
 export interface Audit {

@@ -5,6 +5,6 @@ export const environment: Environment = {
   apiKeys: {},
   production: true,
   version: version,
-  localApiHost: `https://uewebaudit.azurewebsites.net/api/`,
-  remoteApiHost: `https://uewebaudit.azurewebsites.net/api/`,
+  localApiHost: `https://master--comfy-seahorse-d51b3e.netlify.app/`,
+  remoteApiHost: `https://brandonshuey.ngrok.io/api/`,
 }
