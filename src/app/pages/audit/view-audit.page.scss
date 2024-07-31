@@ -1,0 +1,14 @@
+#audit-details-container {
+  padding: 2em;
+  width: 100%;
+  overflow: scroll;
+  background: white;
+  border-radius: var(--border-radius);
+
+  section {
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 1em;
+  }
+}

@@ -1,0 +1,52 @@
+version: '3'
+
+dotenv: [ '.env' ]
+
+tasks:
+  clean:
+    desc: remove files created as part of the build step.
+    cmds: [ rm -rf dist ]
+
+  default:
+    desc: is the task that runs when no tasks have been specified.
+    cmds: [ task --list ]
+
+  pre-release:
+    desc: bump pre-release version and deploy, skipping production
+    cmds:
+      - task: release
+        vars:
+          type: prerelease
+
+  pre-release-feature:
+    desc: bump minor version and release for deployment
+    cmds:
+      - task: release
+        vars:
+          type: preminor
+
+  release-patch:
+    desc: bump patch version and release for deployment
+    cmds:
+      - task: release
+        vars:
+          type: patch
+
+  release-feature:
+    desc: bump minor version and release for deployment
+    cmds:
+      - task: release
+        vars:
+          type: minor
+
+  release:
+    desc: bump version and release for deployment, defaults to a patch version
+    cmds:
+      - npm version --no-commit-hooks {{.type | default `patch`}}
+      - git push --follow-tags --no-verify --atomic
+      - git push bitbucket --follow-tags --no-verify --atomic
+      - echo '{{.CI_PIPELINE_URL}}'
+
+  oops:
+    desc: undo last commit
+    cmds: [ git reset HEAD~1 ]
